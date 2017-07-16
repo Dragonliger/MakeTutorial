@@ -1,0 +1,26 @@
+# CC indica el compilador
+CC=g++
+# CFLAGS indica las opciones que se pasarán al compilador
+CFLAGS=-c -Wall
+# LDFLAGS indica las opciones para el vinculador
+LDFLAGS=
+# SOURCES son los archivos fuente a compilar
+SOURCES=main.cpp hello.cpp factorial.cpp
+# OBJECTS son los archivos de salida del compilador
+OBJECTS=$(SOURCES:.cpp=.o)
+# EXECUTABLE se refiere al nombre del archivo ejecutable final
+EXECUTABLE=hello
+
+# all es la objetivo default para make
+all: $(SOURCES) $(EXECUTABLE)
+
+# indica hacer el ejecutible a partir de los objetos
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
+
+# clean universal para remover todos los ejecutables
+clean:
+	rm *o $(EXECUTABLE)
