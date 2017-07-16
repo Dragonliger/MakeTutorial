@@ -2,5 +2,11 @@ Este es mi primer toque con makefile.
 Seguí un tutorial que se encuentra en
 http://www.mrbook.org/blog/tutorials/make/
 
+Para correrlo solo hay que seleccionar el archivo que quieren y usarlo de la siguiente forma:
+
+Make -f Makefile-#
+
+donde Makefile-# es el que quieran usar.
+
 ~Dragonliger
 Alejandro Castelán
